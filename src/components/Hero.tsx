@@ -1,0 +1,43 @@
+import {
+  COLLEGE_CODE,
+  COLLEGE_EIIN,
+  COLLEGE_LOGO,
+  COLLEGE_MESSAGE,
+  COLLEGE_NAME,
+} from "@/lib/data";
+import Image from "next/image";
+import Navbar from "./Navbar/Navbar";
+
+const Hero = () => {
+  return (
+    <div className="bg-indigo-900 pt-4">
+      <div className="max-w-screen-xl flex mx-auto ">
+        <div className="flex items-center justify-center">
+          <Image alt="College Logo" src={COLLEGE_LOGO} width={100} height={100} />
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center justify-center flex-col h-full">
+            <div className=" text-center">
+              <h1 className="text-white text-6xl font-extrabold flex items-center justify-center">
+{COLLEGE_NAME}
+              </h1>
+            </div>
+            <div className="flex flex-col gap-2  lg:gap-4 items-center py-2">
+              <div className="text-gray-300 font-semibold flex gap-2 lg:gap-6">
+{COLLEGE_MESSAGE}
+              </div>
+              <div className="text-white text-xl font-semibold flex gap-2">
+                <span>College Code:{COLLEGE_CODE}</span>
+                <span>|</span>
+<span>EIIN: {COLLEGE_EIIN}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Navbar />
+    </div>
+  );
+};
+
+export default Hero;
